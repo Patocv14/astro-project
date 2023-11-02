@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel/serverless';
 
 import tailwind from '@astrojs/tailwind';
 
@@ -7,7 +7,5 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   output: 'hybrid',
-  adapter: node({
-    mode: 'middleware',
-  }),
+  adapter: vercel(),
 });
